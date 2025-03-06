@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Maui.Controls;assembly=SkiaSharp.Views.Maui.Controls"
+             x:Class="MAUI_AnimacionEsfera.MainPage"
+             BackgroundColor="Black">
+
+   <Grid x:Name="MainGrid" VerticalOptions="Fill" HorizontalOptions="Fill" Margin="10" ColumnDefinitions="*, 400, *" RowDefinitions="*, 400, *">
+        <!-- Lienzo para el dibujo -->
+        <skia:SKCanvasView x:Name="DrawCanvas" PaintSurface="OnCanvasPaint" BackgroundColor="Orange" Grid.Column="1" Grid.Row="1" IgnorePixelScaling="True"/>
+
+        <!-- Contenedor -->
+        <Ellipse WidthRequest="{Binding ContainerDiameter}" HeightRequest="{Binding ContainerDiameter}" x:Name="Container" Stroke="White" StrokeThickness="3" Grid.Column="1" Grid.Row="1"/>
+
+        <!-- Esferas -->
+        <Ellipse x:Name="Ball1" Fill="Red" Grid.Column="1" Grid.Row="1"/>
+        <Ellipse x:Name="Ball2" Fill="Blue" Grid.Column="1" Grid.Row="1"/>
+    </Grid>
+</ContentPage>
